@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Hack:pixelsize=15:antialias=false:autohint=false";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -32,7 +32,7 @@ static float chscale = 1.0;
  *
  * More advanced example: " `'\"()[]{}"
  */
-char *worddelimiters = " ";
+char *worddelimiters = " `'\"()[]{}|:";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -49,7 +49,7 @@ static unsigned int actionfps = 30;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 0;
 
 /*
  * thickness of underline and bar cursors
@@ -85,30 +85,30 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#3a3a3a",
+	"#cc9393",
+	"#7f9f7f",
+	"#d0bf8f",
+	"#6ca0a3",
+	"#dc8cc3",
+	"#93e0e3",
+	"#dcdccc",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#7f9f7f",
+	"#d78787",
+	"#bfebbf",
+	"#f0dfaf",
+	"#8cd0d3",
+	"#dc8cc3",
+	"#93e0e3",
+	"#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#dcdccc",
+	"#3f3f3f",
 };
 
 
@@ -116,10 +116,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 188;
+unsigned int defaultbg = 257;
+unsigned int defaultcs = 188;
+unsigned int defaultrcs = 256;
 
 /*
  * Default shape of cursor
